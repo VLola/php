@@ -1,0 +1,20 @@
+.div__header{
+    margin: auto;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.div__column{
+    font-weight: bold;
+    width: fit-content;
+}
+.div__center{
+    display: flex;
+    justify-content: center;
+    border: black solid 3px;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    width: 15%;
+}
