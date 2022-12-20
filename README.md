@@ -7,11 +7,11 @@
 В таблицу в виде кнопки с крестиком реализовать удаление фрукта
 Кнопки выводить по одной для каждой записи последним столбцом.
 
-### Main:
+### Main page:
 
 ![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_07/images/main.png)
 
-### Add:
+### Add page:
 
 ![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_07/images/add.png)
 
