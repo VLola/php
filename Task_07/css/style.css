@@ -1,0 +1,37 @@
+table{
+    width: 100%;
+    margin: 2%;
+}
+tr{
+    text-align: center;
+}
+.div__main{
+    margin-block: 10%;
+    margin-inline: 30%;
+}
+#search_name{
+    width: 100%;
+}
+#button_search{
+    width: 100%;
+}
+#button_add{
+    width: 100%;
+}
+.input__style{
+    margin: 2%;
+    width: 100%;
+    font-size: inherit;
+}
+.button__style{
+    margin: 2%;
+    font-size: inherit;
+}
+.div__flex{
+    font-size: 20px;
+    display: flex;
+}
+.tr_green{
+    background-color: green;
+    color: white;
+}
