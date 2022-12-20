@@ -11,7 +11,7 @@
 
 ![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_07/images/main.png)
 
-### Add page:
+### Add product:
 
 ![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_07/images/add.png)
 
