@@ -1,0 +1,82 @@
+.div__main{
+    width: 90%;
+    margin: auto;
+}
+a{
+    font-size: 36px;
+}
+.div__menu{
+    margin-left: auto;
+    width: fit-content;
+}
+.div__content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.div__add-product{
+    width: 30%;
+}
+.div__change-product{
+    width: 60%;
+}
+#search_name{
+    width: 100%;
+}
+#button_search{
+    width: 100%;
+}
+#button_add{
+    width: 100%;
+}
+.input__style{
+    margin: 2%;
+    width: 100%;
+    font-size: inherit;
+}
+.button__style{
+    margin: 2%;
+    font-size: inherit;
+}
+.div__flex{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.div__product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    aspect-ratio: 2/3;
+    border: 1px solid black;
+    margin: 2%;
+    padding: 2%;
+}
+.img__product{
+    width: 70%;
+}
+.div__product-title{
+    width: 100%;
+    height: 20%;
+    font-size: 32px;
+    font-weight: bold;
+}
+.div__product-description{
+    width: 100%;
+    height: 30%;
+}
+.div__change{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    aspect-ratio: 2/3;
+    border: 1px solid black;
+    margin: 2%;
+    padding: 2%;
+}
+.div__change textarea{
+    height: 24%;
+    width: 100%;
+}
