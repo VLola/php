@@ -19,6 +19,14 @@
 
 Ѕд дл€ хранени€ - MySQL
 
+### Products:
+
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_08/images/products.png)
+
+### Change:
+
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_08/images/change.png)
+
 ___
 # Task 7.
 

@@ -15,10 +15,13 @@ a{
     justify-content: space-between;
 }
 .div__add-product{
-    width: 30%;
+    width: 25%;
+    position: sticky;
+    top: 0px;
+    height: fit-content;
 }
 .div__change-product{
-    width: 60%;
+    width: 70%;
 }
 #search_name{
     width: 100%;
@@ -42,41 +45,62 @@ a{
     font-size: 20px;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+}
+.flex-row{
+    flex-direction: row;
+    justify-content: center;
 }
 .div__product{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20%;
+    width: 300px;
     aspect-ratio: 2/3;
     border: 1px solid black;
-    margin: 2%;
+    margin: 1%;
     padding: 2%;
+    overflow-wrap:break-word;
+    border-radius: 1%;
+}
+.div__product button{
+    width: 100%;
+    margin-top: 5%;
+    font-size: x-large;
 }
 .img__product{
     width: 70%;
 }
 .div__product-title{
     width: 100%;
-    height: 20%;
-    font-size: 32px;
+    height: 15%;
+    margin-block: 5%;
+    font-size: xx-large;
     font-weight: bold;
+    overflow: hidden;
 }
 .div__product-description{
     width: 100%;
     height: 30%;
+    margin-block: 5%;
+    overflow: hidden;
 }
-.div__change{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
-    aspect-ratio: 2/3;
-    border: 1px solid black;
-    margin: 2%;
-    padding: 2%;
-}
-.div__change textarea{
-    height: 24%;
+.div__product-price{
     width: 100%;
+    font-size: 32px;
+    font-weight: bold;
 }
+.change-product{
+    width: 240px;
+}
+.change-product label{
+    font-size: x-large;
+}
+.change-product textarea {
+     height: 20%;
+     width: 100%;
+ }
+.change-product button{
+    width: 100%;
+    margin-top: 3%;
+ }

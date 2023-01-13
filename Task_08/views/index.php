@@ -9,7 +9,7 @@
         <a href="add-product.php">Change</a>
     </div>
     <h1>Products:</h1>
-    <div class="div__flex">
+    <div class="div__flex flex-row">
         <?php
         include "../models/Product.php";
         include "../controllers/ProductController.php";
@@ -25,7 +25,7 @@
 
                 foreach ($results as $res){
                     $noteController = new ProductController();
-                    $noteController->setProduct($res["id"],$res["title"], $res["description"], $res["image"]);
+                    $noteController->setProduct($res["id"],$res["title"], $res["description"], $res["image"], $res["price"]);
                     $noteController->showProduct();
                 }
                 //clear
