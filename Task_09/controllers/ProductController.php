@@ -21,13 +21,13 @@ class ProductController
         echo '<h5 class="card-title h-25 overflow-hidden">';
         echo  $this->product->getTitle();
         echo '</h5>';
-        echo '<div class="card-text h-50 overflow-hidden">';
+        echo '<div class="card-text h-50 overflow-hidden mb-1">';
         echo  $this->product->getDescription();
         echo '</div>';
-        echo '<h3 class="card-text mt-auto">';
+        echo '<h4 class="card-text mt-auto">';
         echo  ''.$this->product->getPrice().' грн.';
-        echo '</h3>';
-        echo '<button class="btn btn-primary w-100">Купить</button>';
+        echo '</h4>';
+        echo '<button class="btn btn-outline-secondary w-100">Купить</button>';
         echo '</div>';
         echo '</div>';
     }

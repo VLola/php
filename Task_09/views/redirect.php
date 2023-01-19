@@ -1,7 +1,7 @@
 <?php
 
 function alert($message) {
-    echo "<script>if(!alert('.$message.')) document.location = 'add-product.php';</script>";
+    echo "<script>if(!alert('.$message.')) document.location = 'admin.php';</script>";
 }
 
 if(isset($_POST['add_title']) && isset($_POST['add_description']) && isset($_POST['add_image']) && isset($_POST['add_price'])){
@@ -76,7 +76,5 @@ if(isset($_POST['delete'])){
             $conn->close();
             alert("Error!");
         }
-
     }
-
 }
