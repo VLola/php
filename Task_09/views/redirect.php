@@ -1,13 +1,80 @@
 <?php
 
-function alert($message) {
-    echo "<script>if(!alert('.$message.')) document.location = 'admin.php';</script>";
+function adminAlert($message) {
+    echo "<script>if(!alert('$message')) document.location = 'account.php';</script>";
+}
+
+function loginAlert($message) {
+    echo "<script>if(!alert('$message')) document.location = 'index.php';</script>";
+}
+
+session_start();
+
+if(isset($_POST['logout'])){
+    $_SESSION['login'] = false;
+    echo "<script>document.location = 'index.php';</script>";
+}
+
+if(isset($_POST['register']) && isset($_POST['email']) && isset($_POST['password'])){
+    $conn = new mysqli("localhost", "root", "", "valik");
+    if($conn->connect_error){
+        loginAlert("registration error!");
+    }
+    else{
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $sql_code = 'INSERT INTO `users`(`email`, `password`) VALUES ("'.$email.'" , "'.$password.'")';
+        try{
+            if($conn->query($sql_code)){
+                $conn->close();
+                loginAlert("registration ok!");
+            }
+            else{
+                $conn->close();
+                loginAlert("registration error!");
+            }
+        }catch(Exception $ex) {
+            loginAlert("account exists!");
+        }
+
+    }
+}
+
+if(isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password'])){
+    $conn = new mysqli("localhost", "root", "", "valik");
+    if($conn->connect_error){
+        loginAlert("login error!");
+    }
+    else{
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $sql_code = 'SELECT * FROM `users` WHERE `email` = "'.$email.'"';
+        if($result = $conn->query($sql_code)){
+            while($row = $result->fetch_assoc()) {
+                if($row["password"] === $password) $_SESSION['login'] = true;
+            }
+            $conn->close();
+            if($_SESSION['login'] === true){
+                loginAlert("login ok!");
+            }
+            else{
+                loginAlert("login error!");
+            }
+        }
+        else{
+            $conn->close();
+            loginAlert("login error!");
+        }
+
+    }
 }
 
 if(isset($_POST['add_title']) && isset($_POST['add_description']) && isset($_POST['add_image']) && isset($_POST['add_price'])){
     $conn = new mysqli("localhost", "root", "", "valik");
     if($conn->connect_error){
-        alert("Error!");
+        adminAlert("Error!");
     }
     else{
 
@@ -19,11 +86,11 @@ if(isset($_POST['add_title']) && isset($_POST['add_description']) && isset($_POS
         $sql_code = 'INSERT INTO `products`(`title`, `description`, `image`, `price`) VALUES ("'.$title.'" , "'.$description.'", "'.$image.'", "'.$price.'")';
         if($conn->query($sql_code)){
             $conn->close();
-            alert("Ok!");
+            adminAlert("Ok!");
         }
         else{
             $conn->close();
-            alert("Error!");
+            adminAlert("Error!");
         }
 
     }
@@ -33,7 +100,7 @@ if(isset($_POST['save']) && isset($_POST['title'])  && isset($_POST['description
 
     $conn = new mysqli("localhost", "root", "", "valik");
     if($conn->connect_error){
-        alert("Error!");
+        adminAlert("Error!");
     }
     else{
         $id = $_POST['save'];
@@ -46,11 +113,11 @@ if(isset($_POST['save']) && isset($_POST['title'])  && isset($_POST['description
 
         if($conn->query($sql_code)){
             $conn->close();
-            alert("Ok!");
+            adminAlert("Ok!");
         }
         else{
             $conn->close();
-            alert("Error!");
+            adminAlert("Error!");
         }
 
     }
@@ -61,7 +128,7 @@ if(isset($_POST['delete'])){
 
     $conn = new mysqli("localhost", "root", "", "valik");
     if($conn->connect_error){
-        alert("Error!");
+        adminAlert("Error!");
     }
     else{
         $id = $_POST['delete'];
@@ -70,11 +137,11 @@ if(isset($_POST['delete'])){
 
         if($conn->query($sql_code)){
             $conn->close();
-            alert("Ok!");
+            adminAlert("Ok!");
         }
         else{
             $conn->close();
-            alert("Error!");
+            adminAlert("Error!");
         }
     }
 }

@@ -7,30 +7,9 @@
 </head>
 <body>
 <div class="w-75 m-auto">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse mx-3 justify-content-between" id="navbarTogglerDemo01">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php"><h3>Home</h3></a>
-                </li>
-                <li class="nav-item my-auto">
-                    <a class="nav-link" href="admin.php"><h4>Login</h4></a>
-                </li>
-            </ul>
-            <form class="d-flex flex-row mt-3 w-50" method='get' action="index.php">
-                <input name="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-secondary" type="submit">Search</button>
-            </form>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="cart.php">Shopping cart</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <?php
+        include "./header.php";
+    ?>
     <div class="d-flex flex-wrap justify-content-center">
         <?php
         include "../models/Product.php";
@@ -40,6 +19,10 @@
 
         if(isset($_GET['search'])){
             $search = $_GET['search'];
+        }
+
+        if(isset($_GET['buy'])){
+//            $_SESSION['products'].push($_GET['buy']);
         }
 
         $conn = new mysqli("localhost", "root", "", "valik");

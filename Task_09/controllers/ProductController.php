@@ -27,13 +27,15 @@ class ProductController
         echo '<h4 class="card-text mt-auto">';
         echo  ''.$this->product->getPrice().' грн.';
         echo '</h4>';
-        echo '<button class="btn btn-outline-secondary w-100">Купить</button>';
+        echo '<form method="get">';
+        echo '<button class="btn btn-outline-secondary w-100" name="buy" type="submit" value="'.$this->product->getDescription().'">Купить</button>';
+        echo '</form>';
         echo '</div>';
         echo '</div>';
     }
     public function showChangeProduct()
     {
-        echo '<div class="w-25 px-3 m-3 border">';
+        echo '<div class="px-3 m-3 border" style="height: 30rem; width: 16rem;">';
         echo '<form class="d-flex flex-column" method="post" action="../views/redirect.php">';
         echo '<div class="form-group">';
         echo '<label for="title">Title:</label>';
@@ -44,14 +46,14 @@ class ProductController
 
         echo '<div class="form-group">';
         echo '<label for="description">Description:</label>';
-        echo '<textarea class="form-control" name="description">';
+        echo '<textarea class="form-control" name="description" rows="3">';
         echo  $this->product->getDescription();
         echo '</textarea>';
         echo '</div>';
 
         echo '<div class="form-group">';
         echo '<label for="image">Image url:</label>';
-        echo '<textarea class="form-control" name="image">';
+        echo '<textarea class="form-control" name="image" rows="3">';
         echo  $this->product->getImage();
         echo '</textarea>';
         echo '</div>';

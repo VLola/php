@@ -33,6 +33,9 @@
                     <button type="submit" id="button_add" class="btn btn-secondary mt-2">Save</button>
                 </div>
             </form>
+            <form method='post' action="redirect.php">
+                <button type="submit" name="logout" class="btn btn-secondary mt-2 w-100">Exit</button>
+            </form>
         </div>
         <div class="d-flex flex-wrap justify-content-center">
             <h1>Change products:</h1>
