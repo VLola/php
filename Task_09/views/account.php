@@ -5,11 +5,10 @@
     <link href="../css/style.css" rel="stylesheet"/>
 </head>
 <body>
-
 <div class="w-75 m-auto">
-    <div class="d-flex justify-content-end">
-        <a href="index.php">Products</a>
-    </div>
+    <?php
+    include "./header.php";
+    ?>
     <div class="d-flex">
         <div class="d-flex flex-column">
             <h1>Add Product:</h1>
@@ -41,6 +40,13 @@
                 <?php
                 include "../models/Product.php";
                 include "../controllers/ProductController.php";
+
+                $search = "";
+
+                if(isset($_GET['search'])){
+                    $search = $_GET['search'];
+                }
+
                 $conn = new mysqli("localhost", "root", "", "valik");
 
                 if($conn->connect_error){
@@ -52,9 +58,19 @@
                     if($results = $conn->query($sql_code)) {
 
                         foreach ($results as $res){
-                            $noteController = new ProductController();
-                            $noteController->setProduct($res["id"],$res["title"], $res["description"], $res["image"], $res["price"]);
-                            $noteController->showChangeProduct();
+                            if($search != ""){
+                                if(str_contains(strtolower($res["title"]), strtolower($search))){
+
+                                    $noteController = new ProductController();
+                                    $noteController->setProduct($res["id"],$res["title"], $res["description"], $res["image"], $res["price"]);
+                                    $noteController->showChangeProduct();
+                                }
+                            }
+                            else{
+                                $noteController = new ProductController();
+                                $noteController->setProduct($res["id"],$res["title"], $res["description"], $res["image"], $res["price"]);
+                                $noteController->showChangeProduct();
+                            }
                         }
                         //clear
                         $results->free();
@@ -72,5 +88,6 @@
     </div>
 
 </div>
+<script src="../js/bootstrap.js"></script>
 </body>
 </html>
