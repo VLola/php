@@ -7,6 +7,8 @@ class Product
     protected $description;
     protected $image;
     protected $price;
+    protected $count;
+    protected $fullPrice;
     public function __construct($id, $title, $description, $image, $price)
     {
         $this->id = $id;
@@ -54,5 +56,38 @@ class Product
     public function getPrice()
     {
         return $this->price;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFullPrice()
+    {
+        return $this->fullPrice;
+    }
+
+    /**
+     * @param mixed $count
+     */
+    public function setCount($count): void
+    {
+        $this->count = $count;
+        $this->fullPrice = $count * $this->price;
+    }
+
+    /**
+     * @param mixed $fullPrice
+     */
+    public function setFullPrice($fullPrice): void
+    {
+        $this->fullPrice = $fullPrice;
     }
 }

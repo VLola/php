@@ -1,5 +1,12 @@
 <?php
-session_start();
+if (!session_id()) @ session_start();
+if (!isset($_SESSION['products'])) $_SESSION['products'] = array();
+if(isset($_GET['buy'])){
+    array_push($_SESSION['products'],$_GET['buy']);
+}
+if(isset($_POST["delete"])){
+    unset($_SESSION['products'][array_search($_POST["delete"], $_SESSION['products'])]);
+}
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +37,9 @@ session_start();
         </form>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="cart.php">Shopping cart</a>
+                <?php
+                    echo '<a class="nav-link" href="cart.php">Shopping cart ('.count($_SESSION['products']).')</a>';
+                ?>
             </li>
         </ul>
     </div>

@@ -28,7 +28,7 @@ class ProductController
         echo  ''.$this->product->getPrice().' грн.';
         echo '</h4>';
         echo '<form method="get">';
-        echo '<button class="btn btn-outline-secondary w-100" name="buy" type="submit" value="'.$this->product->getDescription().'">Купить</button>';
+        echo '<button class="btn btn-outline-secondary w-100" name="buy" type="submit" value="'.$this->product->getId().'">Купить</button>';
         echo '</form>';
         echo '</div>';
         echo '</div>';

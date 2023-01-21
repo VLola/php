@@ -21,10 +21,6 @@
             $search = $_GET['search'];
         }
 
-        if(isset($_GET['buy'])){
-//            $_SESSION['products'].push($_GET['buy']);
-        }
-
         $conn = new mysqli("localhost", "root", "", "valik");
 
         if($conn->connect_error){
