@@ -34,24 +34,20 @@
                 foreach ($results as $res){
                     if($search != ""){
                         if(str_contains(strtolower($res["title"]), strtolower($search))){
-                            $noteController = new ProductController();
-                            $noteController->setProduct($res["id"],$res["title"], $res["description"], $res["image"], $res["price"]);
-                            $noteController->showProduct();
+                            $productController = new ProductController();
+                            $productController->setProduct($res["id"],$res["title"], $res["description"], $res["image"], $res["price"]);
+                            $productController->showProduct();
                         }
                     }
                     else{
-                        $noteController = new ProductController();
-                        $noteController->setProduct($res["id"],$res["title"], $res["description"], $res["image"], $res["price"]);
-                        $noteController->showProduct();
+                        $productController = new ProductController();
+                        $productController->setProduct($res["id"],$res["title"], $res["description"], $res["image"], $res["price"]);
+                        $productController->showProduct();
                     }
                 }
                 //clear
                 $results->free();
             }
-            else {
-                echo '<p>Data NOT selected!</p>';
-            }
-
 
             $conn->close();
         }

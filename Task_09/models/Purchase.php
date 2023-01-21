@@ -3,15 +3,19 @@
 class Purchase
 {
     protected $id;
+    protected $email;
     protected $productId;
     protected $count;
-    protected $phone;
-    public function __construct($id, $productId, $count, $phone)
+    protected $price;
+    protected $status;
+    public function __construct($id, $email, $productId, $count, $price, $status)
     {
         $this->id = $id;
+        $this->email = $email;
         $this->productId = $productId;
         $this->count = $count;
-        $this->phone = $phone;
+        $this->price = $price;
+        $this->status = $status;
     }
 
     /**
@@ -22,6 +26,13 @@ class Purchase
         return $this->id;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
     /**
      * @return mixed
      */
@@ -41,9 +52,17 @@ class Purchase
     /**
      * @return mixed
      */
-    public function getPhone()
+    public function getPrice()
     {
-        return $this->phone;
+        return $this->price;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 
 }

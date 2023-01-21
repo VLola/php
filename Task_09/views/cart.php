@@ -30,13 +30,14 @@
                     foreach ($results as $res){
                         $buyController = new BuyController();
                         $buyController->setBuy($res["id"],$res["title"], $res["description"], $res["image"], $res["price"]);
-                        if(!isset($_POST['cart'])){
-                            $buyController->showBuy();
-                            $sumPrice += $buyController->getFullPrice();
-                        }
-                        else{
-                            $buyController->writeToDatabase($_POST['phone']);
-                            $_SESSION['products'] = array();
+                        $buyController->showBuy();
+                        $sumPrice += $buyController->getFullPrice();
+                        if(isset($_POST['cart'])){
+                            if($_POST['email'] != ""){
+                                $buyController->writeToDatabase($_POST['email']);
+                                $_SESSION['products'] = array();
+                            }
+
                         }
                     }
                     //clear
@@ -49,14 +50,19 @@
                 $conn->close();
             }
             if(isset($_POST['cart'])){
-                header("Refresh:0");
+                if($_POST['email'] == ""){
+                    echo "<script>alert('Fill in the email!')</script>";
+                }
+                else{
+                    header("Refresh:0");
+                }
             }
 
             echo '</div>';
             if(count($_SESSION['products']) > 0){
                 echo '<div class="d-flex flex-column p-5 m-5 align-items-center">';
 
-                echo '<input class="form-control" type="text" name="phone" maxlength="13" placeholder="Phone">';
+                echo '<input class="form-control" type="email" name="email" placeholder="Email">';
                 echo '<h4 class="mt-5">'.$sumPrice.' грн.</h4>';
                 echo '<button class="btn btn-outline-secondary w-100 px-5 mt-5" name="cart" type="submit">Оформить заказ</button>';
                 echo '</div>';

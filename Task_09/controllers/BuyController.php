@@ -59,13 +59,13 @@ class BuyController
     {
         return $this->product->getFullPrice();
     }
-    public function writeToDatabase($phone){
+    public function writeToDatabase($email){
         $conn = new mysqli("localhost", "root", "", "valik");
         if(!$conn->connect_error){
             $productId = $this->product->getId();
             $count = $this->product->getCount();
-
-            $sql_code = 'INSERT INTO `purchases`(`productId`, `count`, `phone`) VALUES ("'.$productId.'" , "'.$count.'", "'.$phone.'")';
+            $price =  $this->product->getPrice();
+            $sql_code = 'INSERT INTO `purchases`(`email`, `productId`, `count`,`price`,`status` ) VALUES ( "'.$email.'","'.$productId.'" , "'.$count.'", "'.$price.'", "Оформление")';
             if($conn->query($sql_code)){
                 $conn->close();
             }

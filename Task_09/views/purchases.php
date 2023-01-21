@@ -23,14 +23,35 @@
         </li>
     </ul>
     <div class="d-flex flex-wrap justify-content-center">
-        <div class="d-flex flex-wrap justify-content-center">
             <?php
             include "../models/Purchase.php";
             include "../controllers/PurchaseController.php";
 
 
-            $conn = new mysqli("localhost", "root", "", "valik");
+            if(isset($_POST['changePurchase'])){
+                $conn = new mysqli("localhost", "root", "", "valik");
+                if(!$conn->connect_error){
+                    $id = $_POST['changePurchase'];
+                    $name = "status$id";
+                    $status = $_POST[$name];
 
+                    $sql_code = 'UPDATE purchases SET status="'.$status.'" WHERE id="'.$id.'"';
+                    $conn->query($sql_code);
+                    $conn->close();
+                }
+            }
+            if(isset($_POST['deletePurchase'])){
+                $conn = new mysqli("localhost", "root", "", "valik");
+                if(!$conn->connect_error){
+                    $id = $_POST['deletePurchase'];
+
+                    $sql_code = 'DELETE FROM purchases WHERE id="'.$id.'"';
+                    $conn->query($sql_code);
+                    $conn->close();
+                }
+            }
+
+            $conn = new mysqli("localhost", "root", "", "valik");
             if($conn->connect_error){
                 echo "error";
             }
@@ -38,10 +59,30 @@
 
                 $sql_code = "SELECT * FROM `purchases`;";
                 if($results = $conn->query($sql_code)) {
-
+                    echo '<table class="table table-striped table-hover d-table">';
+                    echo '<thead>';
+                    echo '<tr>';
+                    echo '<td>id</td>';
+                    echo '<td>email</td>';
+                    echo '<td>productId</td>';
+                    echo '<td>count</td>';
+                    echo '<td>price</td>';
+                    echo '<td>full price</td>';
+                    echo '<td>status</td>';
+                    echo '<td>change</td>';
+                    echo '<td>delete</td>';
+                    echo '</tr>';
+                    echo '</thead>';
+                    echo '<tbody>';
+                    echo '<form method="post">';
                     foreach ($results as $res){
                         $purchaseController = new PurchaseController();
+                        $purchaseController->setPurchase($res["id"],$res["email"],$res["productId"], $res["count"], $res["price"], $res["status"]);
+                        $purchaseController->getPurchase();
                     }
+                    echo '<form>';
+                    echo '</tbody>';
+                    echo '</table>';
                     //clear
                     $results->free();
                 }
@@ -50,7 +91,6 @@
                 $conn->close();
             }
             ?>
-        </div>
     </div>
 
 </div>
