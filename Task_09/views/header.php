@@ -31,10 +31,16 @@ if(isset($_POST["delete"])){
                 }
             ?>
         </ul>
-        <form class="d-flex flex-row mt-3 w-50" method='get'>
-            <input name="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-secondary" type="submit">Search</button>
-        </form>
+        <?php
+        $url = explode('/', $_SERVER["PHP_SELF"]);
+        $file = $url[count($url) - 1];
+            if($file != "cart.php" && $file != "purchases.php"){
+                echo '<form class="d-flex flex-row w-50 m-auto" method="get">';
+                echo '<input name="search" class="form-control" type="search" placeholder="Search" aria-label="Search">';
+                echo '<button class="btn btn-outline-secondary" type="submit">Search</button>';
+                echo '</form>';
+            }
+        ?>
         <ul class="navbar-nav">
             <li class="nav-item">
                 <?php

@@ -48,7 +48,9 @@
 
                 $conn->close();
             }
-
+            if(isset($_POST['cart'])){
+                header("Refresh:0");
+            }
 
             echo '</div>';
             if(count($_SESSION['products']) > 0){

@@ -9,36 +9,46 @@
     <?php
     include "./header.php";
     ?>
+    <ul class="nav nav-tabs my-3">
+        <li class="nav-item">
+            <a class="nav-link active display-6" aria-current="page" href="account.php">Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link display-6" href="purchases.php">Purchses</a>
+        </li>
+        <li class="nav-item ms-auto">
+            <form method='post' action="redirect.php">
+                <button type="submit" name="logout" class="btn btn-outline-secondary btn-lg px-5">Exit</button>
+            </form>
+        </li>
+    </ul>
     <div class="d-flex">
-        <div class="d-flex flex-column">
-            <h1>Add Product:</h1>
-            <form method='post' action="redirect.php">
-                <div class="d-flex flex-column">
-                    <div class="form-group">
-                        <label for="add_title">Title:</label>
-                        <textarea class="form-control" type="text" name="add_title"></textarea>
+        <div class="sticky-top h-25 w-25">
+            <div class="d-flex flex-column">
+                <form method='post' action="redirect.php">
+                    <div class="d-flex flex-column">
+                        <div class="form-group">
+                            <label for="add_title">Title:</label>
+                            <textarea class="form-control" type="text" name="add_title"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="add_description">Description:</label>
+                            <textarea class="form-control" type="text" name="add_description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="add_image">Image url:</label>
+                            <textarea class="form-control" type="text" name="add_image"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="add_price">Price:</label>
+                            <input class="form-control" type="number" name="add_price">
+                        </div>
+                        <button type="submit" id="button_add" class="btn btn-secondary mt-2">Add</button>
                     </div>
-                    <div class="form-group">
-                        <label for="add_description">Description:</label>
-                        <textarea class="form-control" type="text" name="add_description"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="add_image">Image url:</label>
-                        <textarea class="form-control" type="text" name="add_image"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="add_price">Price:</label>
-                        <input class="form-control" type="number" name="add_price">
-                    </div>
-                    <button type="submit" id="button_add" class="btn btn-secondary mt-2">Save</button>
-                </div>
-            </form>
-            <form method='post' action="redirect.php">
-                <button type="submit" name="logout" class="btn btn-secondary mt-2 w-100">Exit</button>
-            </form>
+                </form>
+            </div>
         </div>
         <div class="d-flex flex-wrap justify-content-center">
-            <h1>Change products:</h1>
             <div class="d-flex flex-wrap justify-content-center">
                 <?php
                 include "../models/Product.php";

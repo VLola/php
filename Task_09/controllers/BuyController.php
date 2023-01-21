@@ -38,15 +38,15 @@ class BuyController
         echo '<img class="card-img w-50 m-auto" src="'.$this->product->getImage().'">';
         echo '</img>';
         echo '<div class="card-body h-50">';
-        echo '<h5 class="card-title h-25 overflow-hidden">';
+        echo '<h5 class="card-title h-25 overflow-hidden mt-3">';
         echo  $this->product->getTitle();
         echo '</h5>';
-        echo '<div class="d-flex justify-content-between align-items-center">';
+        echo '<div class="d-flex justify-content-between align-items-center mt-4">';
         echo '<button class="btn btn-outline-secondary py-0 w-25 my-3" name="countMinus'.$id.'" type="submit"><h4>-</h4></button>';
         echo '<input class="w-25" type="text" name="count'.$id.'" value="'.$this->product->getCount().'" readonly>';
         echo '<button class="btn btn-outline-secondary py-0 w-25 my-3" name="countPlus'.$id.'" type="submit"><h4>+</h4></button>';
         echo '</div>';
-        echo '<h4 class="card-text">';
+        echo '<h4 class="card-text mt-3">';
         echo  ''.$this->product->getFullPrice().' грн.';
         echo '</h4>';
         echo '</div>';
@@ -61,22 +61,17 @@ class BuyController
     }
     public function writeToDatabase($phone){
         $conn = new mysqli("localhost", "root", "", "valik");
-        if($conn->connect_error){
-
-        }
-        else{
+        if(!$conn->connect_error){
             $productId = $this->product->getId();
             $count = $this->product->getCount();
-            $price = $this->product->getFullPrice();
 
-            $sql_code = 'INSERT INTO `purchases`(`productId`, `count`, `phone`, `price`) VALUES ("'.$productId.'" , "'.$count.'", "'.$phone.'", "'.$price.'")';
+            $sql_code = 'INSERT INTO `purchases`(`productId`, `count`, `phone`) VALUES ("'.$productId.'" , "'.$count.'", "'.$phone.'")';
             if($conn->query($sql_code)){
                 $conn->close();
             }
             else{
                 $conn->close();
             }
-
         }
     }
 }
