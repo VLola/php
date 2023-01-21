@@ -20,7 +20,7 @@
             echo "error";
         }
         else{
-            echo '<div class="d-flex flex-row">';
+            echo '<div class="d-flex flex-row justify-content-between">';
             echo '<div class="d-flex flex-wrap flex-row">';
             if(count($_SESSION['products']) > 0){
                 $ids = $_SESSION['products'];

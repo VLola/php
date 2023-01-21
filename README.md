@@ -1,3 +1,44 @@
+# Task 9.
+
+Разработать интернет магазин с админкой
+
+Магазин включает страницы
+- Главная ( выводяться самые популярные товары и информация о компании )
+- Каталог (Выводим все товары с пагинацией и фильтрами сбоку)
+- Вход - регистрация
+
+Для роли пользователя доступно
+- Добавлять товары в корзинку (и их оттуда удалять )
+- Отдельная страница с инфрмацией о заказах 
+- Страница настроек аккаунта (почта / пароль / номер телефона / данные для доставки)
+
+
+Для роли админа доступно
+-  Страница с CRUD для категорий
+-  Страница с CRUD для товаров
+-  Страница с CRUD для пользователей
+
+### Home:
+
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_09/images/home.png)
+
+### Shoping cart:
+
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_09/images/cart.png)
+
+### Login:
+
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_09/images/login.png)
+
+### Products:
+
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_09/images/products.png)
+
+### Purchases:
+
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_09/images/purchases.png)
+
+___
 # Task 8.
 
 Сделать сайт для работы со списком покупок

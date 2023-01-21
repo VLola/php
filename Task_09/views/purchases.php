@@ -14,7 +14,7 @@
             <a class="nav-link display-6" href="account.php">Products</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active display-6" aria-current="page" href="purchases.php">Purchses</a>
+            <a class="nav-link active display-6" aria-current="page" href="purchases.php">Purchases</a>
         </li>
         <li class="nav-item ms-auto">
             <form method='post' action="redirect.php">
