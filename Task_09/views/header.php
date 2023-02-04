@@ -1,6 +1,7 @@
 <?php
 if (!session_id()) @ session_start();
 if (!isset($_SESSION['products'])) $_SESSION['products'] = array();
+if (!isset($_SESSION['login'])) $_SESSION['login'] = false;
 if(isset($_GET['buy'])){
     if (!in_array($_GET['buy'], $_SESSION['products']))
     {

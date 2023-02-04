@@ -14,7 +14,7 @@
         echo '<form method="post">';
 
         $sumPrice = 0;
-        $conn = new mysqli("localhost", "root", "", "valik");
+        $conn = new mysqli("MYSQL8002.site4now.net", "a93859_valik", "qwerty123", "db_a93859_valik");
 
         if($conn->connect_error){
             echo "error";

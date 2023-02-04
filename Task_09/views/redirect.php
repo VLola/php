@@ -16,7 +16,7 @@ if(isset($_POST['logout'])){
 }
 
 if(isset($_POST['register']) && isset($_POST['email']) && isset($_POST['password'])){
-    $conn = new mysqli("localhost", "root", "", "valik");
+    $conn = new mysqli("MYSQL8002.site4now.net", "a93859_valik", "qwerty123", "db_a93859_valik");
     if($conn->connect_error){
         loginAlert("registration error!");
     }
@@ -42,7 +42,7 @@ if(isset($_POST['register']) && isset($_POST['email']) && isset($_POST['password
 }
 
 if(isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password'])){
-    $conn = new mysqli("localhost", "root", "", "valik");
+    $conn = new mysqli("MYSQL8002.site4now.net", "a93859_valik", "qwerty123", "db_a93859_valik");
     if($conn->connect_error){
         loginAlert("login error!");
     }
@@ -72,7 +72,7 @@ if(isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password'])
 }
 
 if(isset($_POST['add_title']) && isset($_POST['add_description']) && isset($_POST['add_image']) && isset($_POST['add_price'])){
-    $conn = new mysqli("localhost", "root", "", "valik");
+    $conn = new mysqli("MYSQL8002.site4now.net", "a93859_valik", "qwerty123", "db_a93859_valik");
     if($conn->connect_error){
         adminAlert("Error!");
     }
@@ -98,7 +98,7 @@ if(isset($_POST['add_title']) && isset($_POST['add_description']) && isset($_POS
 
 if(isset($_POST['save']) && isset($_POST['title'])  && isset($_POST['description'])  && isset($_POST['image']) && isset($_POST['price']) ){
 
-    $conn = new mysqli("localhost", "root", "", "valik");
+    $conn = new mysqli("MYSQL8002.site4now.net", "a93859_valik", "qwerty123", "db_a93859_valik");
     if($conn->connect_error){
         adminAlert("Error!");
     }
@@ -126,7 +126,7 @@ if(isset($_POST['save']) && isset($_POST['title'])  && isset($_POST['description
 
 if(isset($_POST['delete'])){
 
-    $conn = new mysqli("localhost", "root", "", "valik");
+    $conn = new mysqli("MYSQL8002.site4now.net", "a93859_valik", "qwerty123", "db_a93859_valik");
     if($conn->connect_error){
         adminAlert("Error!");
     }
