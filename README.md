@@ -129,8 +129,8 @@ checkbox checked. ≈сли да, выводитс€ "Thank you for
 subscribing", если нет, страница обновл€етс€.
 
 ___
-# Project 105.
+# Project 106.
 
-![Image text](https://raw.githubusercontent.com/VLola/php/master/Project_105/images/main.png)
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Project_106/images/main.png)
 
 ___
