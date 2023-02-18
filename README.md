@@ -1,4 +1,4 @@
-# Task 9.
+# Project 114.
 
 –азработать интернет магазин с админкой
 
@@ -20,26 +20,26 @@
 
 ### Home:
 
-![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_09/images/home.png)
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Project_114/images/home.png)
 
 ### Shoping cart:
 
-![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_09/images/cart.png)
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Project_114/images/cart.png)
 
 ### Login:
 
-![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_09/images/login.png)
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Project_114/images/login.png)
 
 ### Products:
 
-![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_09/images/products.png)
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Project_114/images/products.png)
 
 ### Purchases:
 
-![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_09/images/purchases.png)
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Project_114/images/purchases.png)
 
 ___
-# Task 8.
+# Project 113.
 
 —делать сайт дл€ работы со списком покупок
 —делать возможность дл€ покупки
@@ -62,14 +62,14 @@ ___
 
 ### Products:
 
-![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_08/images/products.png)
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Project_113/images/products.png)
 
 ### Change:
 
-![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_08/images/change.png)
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Project_113/images/change.png)
 
 ___
-# Task 7.
+# Project 112.
 
 Ќаписать простой сайт дл€ дл€ работы с фруктами
 на начальной странице пользователь будет видеть таблицу с фруктами и над ней строку поиска по имени
@@ -79,31 +79,31 @@ ___
 
 ### Main page:
 
-![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_07/images/main.png)
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Project_112/images/main.png)
 
 ### Add product:
 
-![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_07/images/add.png)
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Project_112/images/add.png)
 
 ___
-# Task 6.
+# Project 111.
 
 ¬ прошлое задание добавить возможность начать тест заново.
 
 ___
-# Task 5.
+# Project 110.
 
 ¬ прошлое задание добавить возможность выводить вопрос в случайном 
 пор€дке.
 
 ___
-# Task 4.
+# Project 109.
 
 ¬ прошлое задание добавить оповещени€ перед переходом на следующую страницу, если пользователь не ответил на все 
 вопросы.
 
 ___
-# Task 3.
+# Project 108.
 
 —оздать форму тестировани€. ѕерва€ страница состоит из 10 вопросов, вариантов ответов (только один из 
 них правильный) и кнопки Next. ѕо клику на кнопку 
@@ -121,7 +121,7 @@ Next пользователь переходит на третью страницу. —охран€етс€ количество правильны
 странице выводитс€ результат.
 
 ___
-# Task 2.
+# Project 107.
 
 ¬ывести текстовые пол€ email, checkbox 'subscribe' и 
 кнопку 'send'. ѕри клике на кнопку скрипт провер€ет 
@@ -129,8 +129,8 @@ checkbox checked. ≈сли да, выводитс€ "Thank you for
 subscribing", если нет, страница обновл€етс€.
 
 ___
-# Task 1.
+# Project 105.
 
-![Image text](https://raw.githubusercontent.com/VLola/php/master/Task_01/images/main.png)
+![Image text](https://raw.githubusercontent.com/VLola/php/master/Project_105/images/main.png)
 
 ___
